@@ -18,7 +18,7 @@ services:
     # iptables rules ahead of ufw, so `ufw deny` did not close them.
     ports:
       - "127.0.0.1:6901:6901"
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:8003:8000"
     environment:
       VNC_USER: ${VNC_USER:-"mt5_user"}
       VNC_PASSWORD: ${VNC_PASSWORD:-"password"}
