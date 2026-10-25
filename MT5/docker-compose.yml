@@ -19,6 +19,10 @@ services:
     ports:
       - "127.0.0.1:6901:6901"
       - "127.0.0.1:8003:8000"
+    networks:
+      ts-net:
+        aliases:
+          - mt5-terminal
     environment:
       VNC_USER: ${VNC_USER:-"mt5_user"}
       VNC_PASSWORD: ${VNC_PASSWORD:-"password"}
@@ -110,3 +114,7 @@ volumes:
   # container, and a host directory would come out owned by root on the host
   # and need chowning by hand on every machine this runs on.
   mt5-wineprefix:
+
+networks:
+  ts-net:
+    external: true
